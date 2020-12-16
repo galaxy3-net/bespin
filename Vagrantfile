@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
     # vb.memory = "1024" # 1Gb
     # vb.memory = "2048" # 2Gb
     # vb.memory = "4096" # 4Gb
-    vb.name = "UCIBox"
+    vb.name = "OWASPbwa"
     vb.gui = true
     vb.cpus = "4"
     vb.memory = "4096"
