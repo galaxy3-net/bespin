@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 #  config.vm.hostname = "owaspbwa"
 #  config.vm.box_version = '1.2.0'
 
-  #config.vm.network "private_network", ip: "10.55.55.9"
+  config.vm.network "private_network", ip: "10.55.55.9"
 
   config.vbguest.auto_update = false
 
@@ -16,9 +16,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.boot_timeout = 120
 
-  config.vm.synced_folder	"../../",	"/vagrant", owner: "1001", group: "1001"
-  config.vm.synced_folder "~/repos/uci", "/repos", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
-  config.vm.synced_folder "../../Downloads", "/Downloads", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
+#  config.vm.synced_folder	"../../",	"/vagrant", owner: "1001", group: "1001"
+#  config.vm.synced_folder "~/repos/uci", "/repos", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
+#  config.vm.synced_folder "../../Downloads", "/Downloads", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
   #config.vm.synced_folder "../../log/nakadia", "/var/log/", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
 
   config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1", auto_correct: true
@@ -26,10 +26,10 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 3389, host: 3389, host_ip: "0.0.0.0", auto_correct: true
   #config.vm.network "forwarded_port", guest: 5901, host: 5901, host_ip: "127.0.0.1", auto_correct: true
 
-  config.vm.provision "file", source: "playbook.yml", destination: "playbook.yml"
-  config.vm.provision "file", source: "../../functions", destination: "functions/bin"
-  config.vm.provision "file", source: "hosts", destination: "hosts"
-  config.vm.provision "file", source: "requirements.yml", destination: "requirements.yml"
+#  config.vm.provision "file", source: "playbook.yml", destination: "playbook.yml"
+#  config.vm.provision "file", source: "../../functions", destination: "functions/bin"
+#  config.vm.provision "file", source: "hosts", destination: "hosts"
+#  config.vm.provision "file", source: "requirements.yml", destination: "requirements.yml"
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
@@ -49,7 +49,7 @@ Vagrant.configure("2") do |config|
     #vb.customize ['modifyvm', :id, '--vrdeport', '2200']
     #vb.customize ['modifyvm', :id, '--graphicscontroller', 'vboxsvga']
     #vb.customize ['modifyvm', :id, '--firmware', 'efi64']
-    #vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
+    vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
   end
 #  config.vm.provision "shell", inline: <<-SHELL
 #     apt-get install -y ansible python3
