@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 #  config.vm.hostname = "owaspbwa"
 #  config.vm.box_version = '1.2.0'
 
-  config.vm.network "private_network", ip: "10.55.55.9"
+  config.vm.network "private_network", ip: "10.55.55.101"
 
   config.vbguest.auto_update = false
 
