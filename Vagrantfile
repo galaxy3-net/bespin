@@ -51,9 +51,9 @@ Vagrant.configure("2") do |config|
     #vb.customize ['modifyvm', :id, '--firmware', 'efi64']
     vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
   end
-#  config.vm.provision "shell", inline: <<-SHELL
-#     apt-get install -y ansible python3
-#SHELL
+  config.vm.provision "shell", inline: <<-SHELL
+     ifconfig eth1 10.55.55.101 netmask 255.255.255.0 up
+SHELL
 #  config.vm.provision "ansible_local" do |ansible|
 #    ansible.playbook = "/vagrant/vagrant/naboo/playbook.yml"
 #    ansible.galaxy_role_file = "/home/vagrant/requirements.yml"
