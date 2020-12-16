@@ -47,9 +47,9 @@ Vagrant.configure("2") do |config|
    config.vm.provision "shell", inline: <<-SHELL
      apt-get install -y ansible python3
 SHELL
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "/vagrant/vagrant/naboo/playbook.yml"
-    ansible.galaxy_role_file = "/home/vagrant/requirements.yml"
-    inventory_path = "/home/vagrant/hosts"
-  end
+#  config.vm.provision "ansible_local" do |ansible|
+#    ansible.playbook = "/vagrant/vagrant/naboo/playbook.yml"
+#    ansible.galaxy_role_file = "/home/vagrant/requirements.yml"
+#    inventory_path = "/home/vagrant/hosts"
+#  end
 end
