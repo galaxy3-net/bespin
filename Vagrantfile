@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "galaxy3/bespin"
   config.vm.box_version = "2020.12.15-1859"
-  config.vm.hostname = "owaspbwa"
+#  config.vm.hostname = "owaspbwa"
 #  config.vm.box_version = '1.2.0'
 
 #  config.vm.network "private_network", ip: "10.55.55.9"
