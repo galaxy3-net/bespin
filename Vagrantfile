@@ -9,6 +9,8 @@ Vagrant.configure("2") do |config|
 
 #  config.vm.network "private_network", ip: "10.55.55.9"
 
+  config.vbguest.auto_update = false
+
   config.ssh.insert_key = false
   config.ssh.connect_timeout = 20
 
