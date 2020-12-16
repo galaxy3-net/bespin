@@ -3,11 +3,11 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "galaxy3/bespin"
-  config.vm.box_version = "2020.12.15-1859"
+  config.vm.box_version = "2020.12.15-2048"
 #  config.vm.hostname = "owaspbwa"
 #  config.vm.box_version = '1.2.0'
 
-  config.vm.network "private_network", ip: "10.55.55.9"
+  #config.vm.network "private_network", ip: "10.55.55.9"
 
   config.vbguest.auto_update = false
 
@@ -49,7 +49,7 @@ Vagrant.configure("2") do |config|
     #vb.customize ['modifyvm', :id, '--vrdeport', '2200']
     #vb.customize ['modifyvm', :id, '--graphicscontroller', 'vboxsvga']
     #vb.customize ['modifyvm', :id, '--firmware', 'efi64']
-    vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
+    #vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
   end
 #  config.vm.provision "shell", inline: <<-SHELL
 #     apt-get install -y ansible python3
