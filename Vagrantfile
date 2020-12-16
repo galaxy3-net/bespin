@@ -12,6 +12,8 @@ Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
   config.ssh.connect_timeout = 20
 
+  config.vm.boot_timeout = 120
+
   config.vm.synced_folder	"../../",	"/vagrant", owner: "1001", group: "1001"
   config.vm.synced_folder "~/repos/uci", "/repos", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
   config.vm.synced_folder "../../Downloads", "/Downloads", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
@@ -47,9 +49,9 @@ Vagrant.configure("2") do |config|
     #vb.customize ['modifyvm', :id, '--firmware', 'efi64']
     #vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
   end
-   config.vm.provision "shell", inline: <<-SHELL
-     apt-get install -y ansible python3
-SHELL
+#  config.vm.provision "shell", inline: <<-SHELL
+#     apt-get install -y ansible python3
+#SHELL
 #  config.vm.provision "ansible_local" do |ansible|
 #    ansible.playbook = "/vagrant/vagrant/naboo/playbook.yml"
 #    ansible.galaxy_role_file = "/home/vagrant/requirements.yml"
