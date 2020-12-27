@@ -53,7 +53,9 @@ Vagrant.configure("2") do |config|
     #vb.customize ['modifyvm', :id, '--vrdeport', '2200']
     #vb.customize ['modifyvm', :id, '--graphicscontroller', 'vboxsvga']
     #vb.customize ['modifyvm', :id, '--firmware', 'efi64']
-#    vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
+    vb.customize ['modifyvm', :id, '--nictype0', 'Am79C960']
+    vb.customize ['modifyvm', :id, '--nictype1', 'Am79C960']
+    vb.customize ['modifyvm', :id, '--nictype2', 'Am79C960']
   end
   config.vm.provision "shell", inline: <<-SHELL
      ifconfig eth1 10.55.56.101 netmask 255.255.255.0 up
