@@ -47,6 +47,8 @@ Vagrant.configure("2") do |config|
     vb.cpus = "4"
     vb.memory = "4096"
     vb.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
+    vb.ssh.username: 'vagrant'
+    vb.ssh.password: 'vagrant'
 
     vb.customize ['modifyvm', :id, '--vrde', 'off']
     #vb.customize ['modifyvm', :id, '--vrdeaddress', '0.0.0.0']
