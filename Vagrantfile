@@ -9,8 +9,8 @@ Vagrant.configure("2") do |config|
   config.ssh.username = 'vagrant'
   config.ssh.password = 'vagrant'
 
-  config.vm.network "private_network", ip: "10.55.56.101",
-  	virtualbox__intnet: "metasploitable3"
+#  config.vm.network "private_network", ip: "10.55.56.101",
+#  	virtualbox__intnet: "metasploitable3"
 
   config.vbguest.auto_update = false
 
@@ -55,9 +55,19 @@ Vagrant.configure("2") do |config|
     #vb.customize ['modifyvm', :id, '--vrdeport', '2200']
     #vb.customize ['modifyvm', :id, '--graphicscontroller', 'vboxsvga']
     #vb.customize ['modifyvm', :id, '--firmware', 'efi64']
+
+    vb.customize ['modifyvm', :id, '--nic0', 'intnet']
     vb.customize ['modifyvm', :id, '--nictype0', 'Am79C960']
+    vb.customize ['modifyvm', :id, '--intnet0', 'metasploitable3']
+
+    vb.customize ['modifyvm', :id, '--nic1', 'intnet']
     vb.customize ['modifyvm', :id, '--nictype1', 'Am79C960']
+    vb.customize ['modifyvm', :id, '--intnet1', 'metasploitable3']
+
+    vb.customize ['modifyvm', :id, '--nic2', 'intnet']
     vb.customize ['modifyvm', :id, '--nictype2', 'Am79C960']
+    vb.customize ['modifyvm', :id, '--intnet2', 'metasploitable3']
+
   end
   config.vm.provision "shell", inline: <<-SHELL
      ifconfig eth1 10.55.56.101 netmask 255.255.255.0 up
