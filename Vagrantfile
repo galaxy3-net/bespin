@@ -9,6 +9,10 @@ Vagrant.configure("2") do |config|
 #  config.ssh.username = 'vagrant'
 #  config.ssh.password = 'vagrant'
 
+
+  config.vm.network "public_network", ip: "10.0.2.15",
+  	auto_config: false
+
   config.vm.network "private_network", ip: "10.55.56.101",
   	auto_config: false
 #  	virtualbox__intnet: "metasploitable3"
