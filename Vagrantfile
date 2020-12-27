@@ -74,9 +74,9 @@ Vagrant.configure("2") do |config|
   end
   config.vm.provision "shell", inline: <<-SHELL
      ifconfig eth1 10.55.56.101 netmask 255.255.255.0 up
-     egrep -v '^vagrant' /etc/shadow /etc/shadow.orig
-     cp /etc/shadow.orig /etc/shadow
-     echo 'vagrant:$6$DTNMrYnNBPQ9j2Wd$Ny8MCVaxCtGeDEeS.Me6mWl1HzobHl8RsbRiSfcfUm1eM78zsStNhZyVY7Q36gsRYh9tp8JUD/rd3mw.GmnZF.:18583:0:99999:7:::' >> /etc/shadow
+     #egrep -v '^vagrant' /etc/shadow /etc/shadow.orig
+     #cp /etc/shadow.orig /etc/shadow
+     #echo 'vagrant:$6$DTNMrYnNBPQ9j2Wd$Ny8MCVaxCtGeDEeS.Me6mWl1HzobHl8RsbRiSfcfUm1eM78zsStNhZyVY7Q36gsRYh9tp8JUD/rd3mw.GmnZF.:18583:0:99999:7:::' >> /etc/shadow
 SHELL
 #  config.vm.provision "ansible_local" do |ansible|
 #    ansible.playbook = "/vagrant/vagrant/naboo/playbook.yml"
