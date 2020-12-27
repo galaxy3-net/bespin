@@ -10,8 +10,7 @@ Vagrant.configure("2") do |config|
 #  config.ssh.password = 'vagrant'
 
 
-  config.vm.network "public_network", ip: "10.0.2.15",
-  	auto_config: false
+  config.vm.network "public_network"
 
   config.vm.network "private_network", ip: "10.55.56.101",
   	auto_config: false
