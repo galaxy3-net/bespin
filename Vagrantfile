@@ -13,10 +13,8 @@ Vagrant.configure("2") do |config|
 #  	virtualbox__intnet: "metasploitable3"
 
   config.vbguest.auto_update = false
-
   config.ssh.insert_key = false
   config.ssh.connect_timeout = 20
-
   config.vm.boot_timeout = 120
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
@@ -46,11 +44,11 @@ Vagrant.configure("2") do |config|
     # vb.memory = "4096" # 4Gb
     vb.name = "OWASPbwa"
     vb.gui = false
-    vb.cpus = "4"
+    vb.cpus = "2"
     vb.memory = "4096"
-    vb.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
+    #vb.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
 
-    vb.customize ['modifyvm', :id, '--vrde', 'off']
+    #vb.customize ['modifyvm', :id, '--vrde', 'off']
     #vb.customize ['modifyvm', :id, '--vrdeaddress', '0.0.0.0']
     #vb.customize ['modifyvm', :id, '--vrdeport', '2200']
     #vb.customize ['modifyvm', :id, '--graphicscontroller', 'vboxsvga']
