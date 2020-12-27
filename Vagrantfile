@@ -56,12 +56,12 @@ Vagrant.configure("2") do |config|
     #vb.customize ['modifyvm', :id, '--graphicscontroller', 'vboxsvga']
     #vb.customize ['modifyvm', :id, '--firmware', 'efi64']
 
-    vb.customize ['modifyvm', :id, '--nic0', 'intnet']
-    vb.customize ['modifyvm', :id, '--nictype0', 'Am79C960']
+#    vb.customize ['modifyvm', :id, '--nic0', 'intnet']
+#    vb.customize ['modifyvm', :id, '--nictype0', 'Am79C960']
 #    vb.customize ['modifyvm', :id, '--intnet0', 'metasploitable3']
 
-    vb.customize ['modifyvm', :id, '--nic1', 'intnet']
-    vb.customize ['modifyvm', :id, '--nictype1', 'Am79C960']
+#    vb.customize ['modifyvm', :id, '--nic1', 'intnet']
+#    vb.customize ['modifyvm', :id, '--nictype1', 'Am79C960']
 #    vb.customize ['modifyvm', :id, '--intnet1', 'metasploitable3']
 
 #    vb.customize ['modifyvm', :id, '--nic2', 'intnet']
