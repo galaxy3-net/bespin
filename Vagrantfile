@@ -56,7 +56,7 @@ Vagrant.configure("2") do |config|
 #    vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
   end
   config.vm.provision "shell", inline: <<-SHELL
-     ifconfig eth1 10.55.55.101 netmask 255.255.255.0 up
+     ifconfig eth1 10.55.56.101 netmask 255.255.255.0 up
 SHELL
 #  config.vm.provision "ansible_local" do |ansible|
 #    ansible.playbook = "/vagrant/vagrant/naboo/playbook.yml"
