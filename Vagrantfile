@@ -6,6 +6,8 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "2020.12.15-2048"
 #  config.vm.hostname = "owaspbwa"
 #  config.vm.box_version = '1.2.0'
+  config.ssh.username: 'vagrant'
+  config.ssh.password: 'vagrant'
 
   config.vm.network "private_network", ip: "10.55.56.101",
   	virtualbox__intnet: "metasploitable3"
@@ -47,8 +49,6 @@ Vagrant.configure("2") do |config|
     vb.cpus = "4"
     vb.memory = "4096"
     vb.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
-    vb.ssh.username: 'vagrant'
-    vb.ssh.password: 'vagrant'
 
     vb.customize ['modifyvm', :id, '--vrde', 'off']
     #vb.customize ['modifyvm', :id, '--vrdeaddress', '0.0.0.0']
