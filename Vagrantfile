@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 #  config.vm.network "private_network", ip: "10.55.56.101",
 #    virtualbox__intnet: "metasploitable3"
 
-  config.ssh.host "10.0.2.5"
+#  config.ssh.host "10.0.2.5"
 #  config.ssh.port "22"
   config.vbguest.auto_update = false
   config.ssh.insert_key = false
@@ -27,6 +27,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "forwarded_port", guest: 22, host: 2200, id: "ssh", disabled: true
   config.vm.network "forwarded_port", guest: 22, host: 51022, host_ip: "0.0.0.0", auto_correct: true
+  config.vm.network "forwarded_port", guest: 80, host: 80, host_ip: "0.0.0.0", auto_correct: true
 #  config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1", auto_correct: true
 #  config.vm.network "forwarded_port", guest: 80, host: 50080, host_ip: "0.0.0.0", auto_correct: true
 #  config.vm.network "forwarded_port", guest: 3389, host: 3389, host_ip: "0.0.0.0", auto_correct: true
