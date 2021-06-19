@@ -9,8 +9,8 @@ Vagrant.configure("2") do |config|
   config.ssh.username = 'root'
   config.ssh.password = 'owaspbwa'
 
-  config.vm.network "private_network", ip: "10.55.56.101",
-    virtualbox__intnet: "metasploitable3"
+#  config.vm.network "private_network", ip: "10.55.56.101",
+#    virtualbox__intnet: "metasploitable3"
 
 #  config.ssh.host "192.168.1.70"
 #  config.ssh.port "22"
