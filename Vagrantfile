@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
 #    virtualbox__intnet: "metasploitable3"
 
   config.vm.network "private_network", type: "dhcp",
-    name: "vboxnet3"
+#    name: "vboxnet3"
 
 #  config.ssh.host "10.0.2.5"
 #  config.ssh.port "22"
