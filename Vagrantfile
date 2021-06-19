@@ -16,8 +16,8 @@ Vagrant.configure("2") do |config|
 #  config.ssh.port "22"
   config.vbguest.auto_update = false
   config.ssh.insert_key = false
-  config.ssh.connect_timeout = 20
-  config.vm.boot_timeout = 120
+  config.ssh.connect_timeout = 120
+  config.vm.boot_timeout = 240
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
 #  config.vm.synced_folder	"../../",	"/vagrant", owner: "1001", group: "1001"
