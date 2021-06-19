@@ -9,8 +9,8 @@ Vagrant.configure("2") do |config|
   config.ssh.username = 'vagrant'
   config.ssh.password = 'vagrant'
 
-#  config.vm.network "private_network", ip: "10.55.56.101",
-#    virtualbox__intnet: "metasploitable3"
+  config.vm.network "private_network", ip: "10.55.56.101",
+    virtualbox__intnet: "metasploitable3"
 
 #  config.ssh.host "192.168.1.70"
 #  config.ssh.port "22"
@@ -69,12 +69,12 @@ Vagrant.configure("2") do |config|
  #   vb.customize ['modifyvm', :id, '--intnet2', 'metasploitable3']
 
   end
-  config.vm.provision "shell", inline: <<-SHELL
-     ifconfig eth1 10.55.56.101 netmask 255.255.255.0 up
+#  config.vm.provision "shell", inline: <<-SHELL
+#     ifconfig eth1 10.55.56.101 netmask 255.255.255.0 up
      #egrep -v '^vagrant' /etc/shadow /etc/shadow.orig
      #cp /etc/shadow.orig /etc/shadow
      #echo 'vagrant:$6$DTNMrYnNBPQ9j2Wd$Ny8MCVaxCtGeDEeS.Me6mWl1HzobHl8RsbRiSfcfUm1eM78zsStNhZyVY7Q36gsRYh9tp8JUD/rd3mw.GmnZF.:18583:0:99999:7:::' >> /etc/shadow
-SHELL
+#SHELL
 #  config.vm.provision "ansible_local" do |ansible|
 #    ansible.playbook = "/vagrant/vagrant/naboo/playbook.yml"
 #    ansible.galaxy_role_file = "/home/vagrant/requirements.yml"
