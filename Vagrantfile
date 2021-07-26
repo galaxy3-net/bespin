@@ -20,7 +20,6 @@ Vagrant.configure("2") do |config|
   config.vbguest.auto_update = false
   config.ssh.insert_key = false
   config.ssh.connect_timeout = 120
-  config.ssh.retries = 10
   config.vm.boot_timeout = 240
 
   config.trigger.after :up do |trigger|
