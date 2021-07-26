@@ -9,8 +9,9 @@ Vagrant.configure("2") do |config|
   config.ssh.username = 'root'
   config.ssh.password = 'owaspbwa'
 
-#  config.vm.network "private_network", ip: "10.55.56.101",
-#    virtualbox__intnet: "metasploitable3", nic_type: "virtio"
+  config.vm.network "private_network", ip: "10.55.56.101",
+    virtualbox__intnet: "metasploitable3", nic_type: "virtio",
+    auto_config: false
 
 #  config.vm.network "private_network", type: "dhcp"
 #    name: "vboxnet3"
@@ -21,8 +22,6 @@ Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
   config.ssh.connect_timeout = 120
   config.vm.boot_timeout = 240
-  #config.vm.base_address = '10.0.2.15'
-  config.vm.base_address = '10.55.56.60'
 
   config.trigger.after :up do |trigger|
     trigger.name = "Complete Setup"
