@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
 
 
 
-  config.vm.network "private_network",
+  config.vm.network "private_network", type: dhcp,
   	virtualbox__intnet: "metasploitable3",
   	auto_config: false,
   	mac: "080027aaaaba"
