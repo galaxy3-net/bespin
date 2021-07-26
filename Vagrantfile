@@ -21,7 +21,8 @@ Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
   config.ssh.connect_timeout = 120
   config.vm.boot_timeout = 240
-  config.vm.base_address = '10.0.2.15'
+  #config.vm.base_address = '10.0.2.15'
+  config.vm.base_address = '10.55.56.60'
 
   config.trigger.after :up do |trigger|
     trigger.name = "Complete Setup"
@@ -71,13 +72,13 @@ Vagrant.configure("2") do |config|
     #vb.customize ['modifyvm', :id, '--graphicscontroller', 'vboxsvga']
     #vb.customize ['modifyvm', :id, '--firmware', 'efi64']
 
-    vb.customize ['modifyvm', :id, '--nic0', 'intnet']
-    vb.customize ['modifyvm', :id, '--nictype0', 'Am79C960']
-    vb.customize ['modifyvm', :id, '--intnet0', 'metasploitable3']
+#    vb.customize ['modifyvm', :id, '--nic0', 'intnet']
+#    vb.customize ['modifyvm', :id, '--nictype0', 'Am79C960']
+#    vb.customize ['modifyvm', :id, '--intnet0', 'metasploitable3']
 
-    vb.customize ['modifyvm', :id, '--nic1', 'intnet']
-    vb.customize ['modifyvm', :id, '--nictype1', 'Am79C960']
-    vb.customize ['modifyvm', :id, '--intnet1', 'metasploitable3']
+#    vb.customize ['modifyvm', :id, '--nic1', 'intnet']
+#    vb.customize ['modifyvm', :id, '--nictype1', 'Am79C960']
+#    vb.customize ['modifyvm', :id, '--intnet1', 'metasploitable3']
 
 #    vb.customize ['modifyvm', :id, '--nic2', 'intnet']
  #   vb.customize ['modifyvm', :id, '--nictype2', 'Am79C960']
