@@ -1,0 +1,18 @@
+Bespin (OWASPbwa)
+
+OWASPbwa machine.
+
+Users:
+	o root / owaspbwa
+	o vagrant / vagrant
+
+!!! This VM has many serious security issues. We strongly recommend that you run
+    it only on the "host only" or "NAT" network in the VM settings !!!
+
+You can access the web apps at http://10.0.2.15/
+
+You can administer / configure this machine through the console here, by SSHing
+to 10.0.2.15, via Samba at \\10.0.2.15\, or via phpmyadmin at
+http://10.0.2.15/phpmyadmin.
+
+In all these cases, you can use username "root" and password "owaspbwa".

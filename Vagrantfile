@@ -22,6 +22,11 @@ Vagrant.configure("2") do |config|
   config.ssh.connect_timeout = 120
   config.vm.boot_timeout = 240
 
+  config.trigger.after :up do |trigger|
+    trigger.name = "Complete Setup"
+  	trigger.info = File.read("Description")
+  end
+
   config.vm.synced_folder ".", "/vagrant", disabled: true
 #  config.vm.synced_folder	"../../",	"/vagrant", owner: "1001", group: "1001"
 #  config.vm.synced_folder "~/repos/uci", "/repos", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
@@ -40,6 +45,12 @@ Vagrant.configure("2") do |config|
 #  config.vm.provision "file", source: "../../functions", destination: "functions/bin"
 #  config.vm.provision "file", source: "hosts", destination: "hosts"
 #  config.vm.provision "file", source: "requirements.yml", destination: "requirements.yml"
+
+
+
+  config.vm.network "private_network", ip: "10.55.56.59",
+  	virtualbox__intnet: "metasploitable3",
+  	mac: "080027aaaaba"
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
