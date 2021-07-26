@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
   config.ssh.connect_timeout = 120
   config.vm.boot_timeout = 240
+  config.vm.base_address = '10.0.2.15'
 
   config.trigger.after :up do |trigger|
     trigger.name = "Complete Setup"
