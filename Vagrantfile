@@ -48,8 +48,7 @@ Vagrant.configure("2") do |config|
 #  config.vm.provision "file", source: "requirements.yml", destination: "requirements.yml"
 
   config.vm.network "private_network", ip: "10.55.56.59",
-  	virtualbox__intnet: "metasploitable3", name: "metasploitable3",
-  	nic_type: "virtio"
+  	virtualbox__intnet: "metasploitable3", name: "metasploitable3"
 #  	auto_config: false
 #  	mac: "080027aaaaba"
 
@@ -76,9 +75,9 @@ Vagrant.configure("2") do |config|
 #    vb.customize ['modifyvm', :id, '--nictype0', 'Am79C960']
 #    vb.customize ['modifyvm', :id, '--intnet0', 'metasploitable3']
 
-#    vb.customize ['modifyvm', :id, '--nic1', 'intnet']
-#    vb.customize ['modifyvm', :id, '--nictype1', 'Am79C960']
-#    vb.customize ['modifyvm', :id, '--intnet1', 'metasploitable3']
+    vb.customize ['modifyvm', :id, '--nic1', 'intnet']
+    vb.customize ['modifyvm', :id, '--nictype1', 'Am79C960']
+    vb.customize ['modifyvm', :id, '--intnet1', 'metasploitable3']
 
 #    vb.customize ['modifyvm', :id, '--nic2', 'intnet']
  #   vb.customize ['modifyvm', :id, '--nictype2', 'Am79C960']
