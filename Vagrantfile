@@ -75,9 +75,9 @@ Vagrant.configure("2") do |config|
 #    vb.customize ['modifyvm', :id, '--nictype0', 'Am79C960']
 #    vb.customize ['modifyvm', :id, '--intnet0', 'metasploitable3']
 
-    vb.customize ['modifyvm', :id, '--nic1', 'intnet']
-    vb.customize ['modifyvm', :id, '--nictype1', 'Am79C960']
-    vb.customize ['modifyvm', :id, '--intnet1', 'metasploitable3']
+#    vb.customize ['modifyvm', :id, '--nic1', 'intnet']
+#    vb.customize ['modifyvm', :id, '--nictype1', 'Am79C960']
+#    vb.customize ['modifyvm', :id, '--intnet1', 'metasploitable3']
 
 #    vb.customize ['modifyvm', :id, '--nic2', 'intnet']
  #   vb.customize ['modifyvm', :id, '--nictype2', 'Am79C960']
