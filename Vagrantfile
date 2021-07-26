@@ -22,8 +22,6 @@ Vagrant.configure("2") do |config|
   config.ssh.connect_timeout = 120
   config.vm.boot_timeout = 240
 
-  config.autoconfigure = false
-
   config.trigger.after :up do |trigger|
     trigger.name = "Complete Setup"
   	trigger.info = File.read("Description")
