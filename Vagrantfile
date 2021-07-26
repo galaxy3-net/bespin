@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
 #  config.vm.provision "file", source: "hosts", destination: "hosts"
 #  config.vm.provision "file", source: "requirements.yml", destination: "requirements.yml"
 
-  config.vm.network "private_network", ip: "10.55.56.59"
+  config.vm.network "private_network", ip: "10.55.56.59",
   	virtualbox__intnet: "metasploitable3", name: "metasploitable3"
 #  	auto_config: false
 #  	mac: "080027aaaaba"
